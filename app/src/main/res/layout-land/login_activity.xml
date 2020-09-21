@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#34495e"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    tools:ignore="MissingDefaultResource">
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Bicycle finder"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+      android:textColor="#FFFFFF"
+      android:textSize="40dp"/>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Login"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+      android:textColor="#FFFFFF"
+      android:textSize="30dp"/>
+
+  <EditText
+      android:id="@+id/mainUsernameEditText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      android:width="250dp"
+      android:hint="Brugernavn"
+      android:padding="15dp"
+      android:textColor="#FFFFFF"
+      android:inputType="text"
+
+      />
+
+  <EditText
+      android:id="@+id/mainPasswordEditText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      android:width="250dp"
+      android:hint="Password"
+      android:padding="15dp"
+      android:textColor="#FFFFFF"
+      android:inputType="textPassword"
+      />
+
+  <Button
+      android:id="@+id/mainLoginButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_marginTop="10dp"
+      android:text="Login"
+    />
+
+  <TextView
+      android:id="@+id/mainMessageTextView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Ny bruger"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+      android:textColor="#FFFFFF"
+      android:textSize="30dp"/>
+
+  <Button
+      android:id="@+id/mainRegisterButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_marginTop="10dp"
+      android:text="Registrér dig her"
+      android:onClick="mainRegisterButton" />
+
+
+
+
+
+</LinearLayout>
