@@ -10,6 +10,7 @@
 
 
     <TextView
+        android:id="@+id/loggedInHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Oversigt over efterlyste cykler"
