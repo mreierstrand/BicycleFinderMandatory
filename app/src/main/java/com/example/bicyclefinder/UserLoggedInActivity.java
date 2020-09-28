@@ -26,27 +26,22 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private static final String LOG_TAG = "FoundCycles";
     private TextView messageView;
     private ProgressBar progressBar;
-    //private String selection = "None";
 
     //Opretter en binding
     ActivityUserLoggedInBinding binding;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityUserLoggedInBinding.inflate(getLayoutInflater());
         //setContentView(R.layout.activity_user_logged_in);
-        //Bruger denne ^ i stedet for den under
+        //Bruger denne i stedet for den over
         setContentView(binding.getRoot());
         messageView = findViewById(R.id.loggedInMessageTextView);
         progressBar = findViewById(R.id.loggedInProgressBar);
 
-        MaterialButtonToggleGroup materialButtonToggleGroup = findViewById(R.id.toggleGroup);
-        int buttonId = materialButtonToggleGroup.getCheckedButtonId();
-        MaterialButton button = materialButtonToggleGroup.findViewById(buttonId);
 
+        MaterialButtonToggleGroup materialButtonToggleGroup = findViewById(R.id.toggleGroup);
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
             public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
@@ -71,30 +66,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
                 }
             }
         });
-
-        /*binding.toggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
-            @Override
-            public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
-
-                if(binding.loggedInMissingButton.isChecked())
-                {
-                    getAndShowAllMissingBikes();
-                }
-                else if(binding.loggedInFoundButton.isChecked())
-                {
-                    getAndShowAllFoundBikes();
-                }
-                else if(binding.loggedInAllButton.isChecked())
-                {
-                    getAndShowAllBikes();
-                }
-                else {
-
-                }
-            }
-        });*/
-
-
     }
 
     @Override
@@ -229,5 +200,4 @@ public class UserLoggedInActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
 }

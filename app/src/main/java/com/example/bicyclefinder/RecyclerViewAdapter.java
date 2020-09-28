@@ -1,6 +1,8 @@
 package com.example.bicyclefinder;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +26,14 @@ public class RecyclerViewAdapter<T> extends RecyclerView.Adapter<RecyclerViewAda
         Log.d(LOG_TAG, data.toString());
     }
 
+    @SuppressLint("ResourceAsColor")
     @NonNull
     @Override
     public RecyclerViewAdapter<T>.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = makeView(parent.getContext());
         Log.d(LOG_TAG, v.toString());
         MyViewHolder vh = new MyViewHolder(v);
+        vh.view.setTextColor(Color.WHITE);
         return vh;
     }
 
