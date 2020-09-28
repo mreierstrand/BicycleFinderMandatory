@@ -1,37 +1,61 @@
 package com.example.bicyclefinder;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Bike {
+import java.io.Serializable;
+
+public class Bike implements Serializable {
 
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("frameNumber")
     @Expose
     private String frameNumber;
+
     @SerializedName("kindOfBicycle")
     @Expose
     private String kindOfBicycle;
+
     @SerializedName("brand")
     @Expose
     private String brand;
+
     @SerializedName("colors")
     @Expose
     private String colors;
+
     @SerializedName("place")
     @Expose
     private String place;
+
     @SerializedName("date")
     @Expose
     private String date;
+
     @SerializedName("userId")
     @Expose
     private Integer userId;
+
     @SerializedName("missingFound")
     @Expose
     private String missingFound;
+
+    public Bike(String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date, String missingFound) {
+        this.frameNumber = frameNumber;
+        this.kindOfBicycle = kindOfBicycle;
+        this.brand = brand;
+        this.colors = colors;
+        this.place = place;
+        this.date = date;
+        this.missingFound = missingFound;
+    }
+
+    public Bike() {}
 
     public Integer getId() {
         return id;
@@ -105,17 +129,9 @@ public class Bike {
         this.missingFound = missingFound;
     }
 
+
+    @NonNull
     @Override
     public String toString() {
-        return "Bike{" +
-                "frameNumber='" + frameNumber + '\'' +
-                ", kindOfBicycle='" + kindOfBicycle + '\'' +
-                ", brand='" + brand + '\'' +
-                ", colors='" + colors + '\'' +
-                ", place='" + place + '\'' +
-                ", date='" + date + '\'' +
-                ", userId=" + userId +
-                ", missingFound='" + missingFound + '\'' +
-                '}';
-    }
+        return id + " " + frameNumber + " " + kindOfBicycle + " " + brand + " " + colors + " " + place + " " + date + " " + userId + " " + missingFound; }
 }

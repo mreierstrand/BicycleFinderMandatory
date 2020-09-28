@@ -16,17 +16,16 @@ public interface BikeService {
 
     //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles
     @GET("bicycles")
-    Call<List<Bike>> getAllbicycles();
+    Call<List<Bike>> getAllBikes();
 
     //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles/id/1
     @GET("bicycles/id/{id}")
-    Call<Bike> getBikebyId(@Path("id") int id);
+    Call<Bike> getBikebyId(@Path("bikeId") int bikeId);
 
     //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles/missing
     //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles/found
-
     @GET("bicycles/{missingFound}")
-    Call<Bike> getBikebyMissingFound(@Path("missingFound") String missingFound);
+    Call<List<Bike>> getBikebyMissingFound(@Path("missingFound") String missingFound);
 
     @POST("bicycles")
     @FormUrlEncoded
