@@ -9,6 +9,7 @@
     android:background="#34495e">
 
     <TextView
+        android:id="@+id/registerHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrering"
@@ -78,7 +79,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
-        android:text="Opret bruger"/>
+        android:text="Opret bruger"
+        />
         //android:onClick="RegisterUserClick"
 
 
