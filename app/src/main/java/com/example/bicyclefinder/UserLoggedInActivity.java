@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bicyclefinder.databinding.ActivityUserLoggedInBinding;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private static final String LOG_TAG = "FoundCycles";
     private TextView messageView;
     private ProgressBar progressBar;
+    private FloatingActionButton floatingActionButton;
 
     //Opretter en binding
     ActivityUserLoggedInBinding binding;
@@ -39,6 +42,20 @@ public class UserLoggedInActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         messageView = findViewById(R.id.loggedInMessageTextView);
         progressBar = findViewById(R.id.loggedInProgressBar);
+        floatingActionButton = findViewById(R.id.loggedinFloatingActionButton);
+
+        Intent intent = getIntent();
+
+        Toast.makeText(UserLoggedInActivity.this,intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT).show();
+
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
 
         MaterialButtonToggleGroup materialButtonToggleGroup = findViewById(R.id.toggleGroup);
@@ -72,6 +89,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         getAndShowAllBikes();
+        floatingActionButton.show();
         //getAndShowAllMissingBikes();
         //getAndShowAllFoundBikes();
     }
@@ -80,6 +98,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
     public void onDestroy() {
         super.onDestroy();
         binding = null;
+        floatingActionButton.hide();
     }
 
     private void getAndShowAllBikes() {
@@ -200,4 +219,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+
+
 }

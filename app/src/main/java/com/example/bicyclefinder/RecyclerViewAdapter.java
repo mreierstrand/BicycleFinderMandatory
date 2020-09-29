@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -34,7 +35,9 @@ public class RecyclerViewAdapter<T> extends RecyclerView.Adapter<RecyclerViewAda
         Log.d(LOG_TAG, v.toString());
         MyViewHolder vh = new MyViewHolder(v);
         vh.view.setTextColor(Color.WHITE);
+        vh.view.setTextSize(18);
         return vh;
+
     }
 
     private View makeView(Context context) {

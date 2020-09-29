@@ -133,5 +133,5 @@ public class Bike implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return id + " " + frameNumber + " " + kindOfBicycle + " " + brand + " " + colors + " " + place + " " + date + " " + userId + " " + missingFound; }
+        return "Stelnummer: " + frameNumber + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Sted: " + place + "\n" + "Dato: " + date + "\n" + "UserId: " + userId + "\n \n"; }
 }
