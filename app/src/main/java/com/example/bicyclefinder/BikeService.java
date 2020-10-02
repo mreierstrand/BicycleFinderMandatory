@@ -14,26 +14,21 @@ import retrofit2.http.Path;
 
 public interface BikeService {
 
-    //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles
-    @GET("bicycles")
+    @GET("bicycles/")
     Call<List<Bike>> getAllBikes();
 
-    //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles/id/1
     @GET("bicycles/id/{id}")
     Call<Bike> getBikebyId(@Path("bikeId") int bikeId);
 
-    //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles/missing
-    //https://anbo-bicyclefinder.azurewebsites.net/api/bicycles/found
     @GET("bicycles/{missingFound}")
     Call<List<Bike>> getBikebyMissingFound(@Path("missingFound") String missingFound);
 
     @POST("bicycles")
     @FormUrlEncoded
-        // I had problems making this work. I used saveBookBody instead
-    Call<Bike> saveUser(@Field("Name") String name, @Field("Phone") String phone);
+    Call<Bike> saveBike(@Field("Name") String name, @Field("Phone") String phone);
 
-    @POST("bicycles")
-    Call<Bike> saveUser(@Body User user);
+    @POST("Bicycles/")
+    Call<Bike> postBike(@Body Bike bike);
 
 
     //Har ikke brug for. Se https://anbo-bicyclefinder.azurewebsites.net/swagger/index.html

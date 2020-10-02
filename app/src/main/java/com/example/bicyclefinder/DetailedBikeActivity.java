@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DetailedWantedBike extends AppCompatActivity {
+public class DetailedBikeActivity extends AppCompatActivity {
     public static final String BIKE = "BIKE";
+
+    private int bikeId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

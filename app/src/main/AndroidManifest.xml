@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailedWantedBike"></activity>
+        <activity android:name=".AddBikeActivity"></activity>
+        <activity android:name=".DetailedBikeActivity" />
         <activity android:name=".UserLoggedInActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">

@@ -8,6 +8,17 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Bike implements Serializable {
+    public Bike(int id, String frameNumber, String kindOfBicycle, String brand, String colors, String place, int userId, String missingFound) {
+        setId(id);
+        setFrameNumber(frameNumber);
+        setKindOfBicycle(kindOfBicycle);
+        setBrand(brand);
+        setColors(colors);
+        setPlace(place);
+        setUserId(userId);
+        setMissingFound(missingFound);
+    }
+
 
     @SerializedName("id")
     @Expose
@@ -44,16 +55,6 @@ public class Bike implements Serializable {
     @SerializedName("missingFound")
     @Expose
     private String missingFound;
-
-    public Bike(String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date, String missingFound) {
-        this.frameNumber = frameNumber;
-        this.kindOfBicycle = kindOfBicycle;
-        this.brand = brand;
-        this.colors = colors;
-        this.place = place;
-        this.date = date;
-        this.missingFound = missingFound;
-    }
 
     public Bike() {}
 
@@ -130,8 +131,14 @@ public class Bike implements Serializable {
     }
 
 
+//    @NonNull
+//    @Override
+//    public String toString() {
+//        return "Stelnummer: " + frameNumber + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Sted: " + place + "\n" + "Dato: " + date + "\n" + "UserId: " + userId + "\n \n"; }
+//    }
+
     @NonNull
     @Override
     public String toString() {
-        return "Stelnummer: " + frameNumber + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Sted: " + place + "\n" + "Dato: " + date + "\n" + "UserId: " + userId + "\n \n"; }
+        return "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Sted: " + place + "\n"; }
 }

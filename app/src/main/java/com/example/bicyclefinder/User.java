@@ -26,9 +26,11 @@ public class User implements Serializable {
 
     }
 
-    public User(String name, String phone){
-        this.name = name;
-        this.phone = phone;
+    public User(String name, String phone, String firebaseUserId){
+        setId(5);
+        setName(name);
+        setPhone(phone);
+        setFirebaseUserId(firebaseUserId);
     }
     public Integer getId() {
         return id;

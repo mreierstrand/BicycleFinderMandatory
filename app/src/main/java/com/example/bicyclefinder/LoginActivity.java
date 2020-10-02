@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -77,7 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            messageView.setText("Logged in");
+                            messageView.setTextColor(Color.GREEN);
+                            messageView.setText("Login succes");
 
                             Intent intent = new Intent(getBaseContext(), UserLoggedInActivity.class);
                             intent.putExtra("userLoggedIn", user.getEmail());
@@ -91,10 +93,19 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(getBaseContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             messageView.setText("Du er ikke oprettet i systemet");
+                            messageView.setTextColor(Color.RED);
                         }
                     }
                 });
 
     }
 
+    public void LoginUserClickAUTO(View view) {
+        EditText emailView = findViewById(R.id.mainEmailEditText);
+        EditText passwordView = findViewById(R.id.mainPasswordEditText);
+
+        emailView.setText("test@test.com");
+        passwordView.setText("testtest");
+        LoginUserClick(view);
+    }
 }

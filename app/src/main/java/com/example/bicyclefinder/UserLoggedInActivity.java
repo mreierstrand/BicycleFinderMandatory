@@ -13,10 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bicyclefinder.databinding.ActivityUserLoggedInBinding;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -46,17 +44,16 @@ public class UserLoggedInActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        Toast.makeText(UserLoggedInActivity.this,intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT).show();
+        Toast.makeText(UserLoggedInActivity.this, "Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_LONG).show();
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(UserLoggedInActivity.this, AddBikeActivity.class);
+                startActivity(intent);
             }
         });
-
-
 
         MaterialButtonToggleGroup materialButtonToggleGroup = findViewById(R.id.toggleGroup);
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
@@ -100,6 +97,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
         binding = null;
         floatingActionButton.hide();
     }
+
 
     private void getAndShowAllBikes() {
         BikeService bikeFinderService = ApiUtils.getBikeService();
@@ -213,8 +211,8 @@ public class UserLoggedInActivity extends AppCompatActivity {
         adapter.setOnItemClickListener((view, position, item) -> {
             Bike bike = (Bike) item;
             Log.d(LOG_TAG, item.toString());
-            Intent intent = new Intent(UserLoggedInActivity.this, DetailedWantedBike.class);
-            intent.putExtra(DetailedWantedBike.BIKE, bike);
+            Intent intent = new Intent(UserLoggedInActivity.this, DetailedBikeActivity.class);
+            intent.putExtra(DetailedBikeActivity.BIKE, bike);
             Log.d(LOG_TAG, "putExtra " + bike.toString());
             startActivity(intent);
         });

@@ -69,13 +69,26 @@
       android:onClick="LoginUserClick"
     />
 
+  <Button
+      android:id="@+id/mainLoginButtonAUTO"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_marginTop="10dp"
+      android:text="Login Auto"
+      android:onClick="LoginUserClickAUTO"
+      />
+
+
   <TextView
       android:id="@+id/mainMessageTextView"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="30dp"
       android:layout_marginEnd="30dp"
-    />
+      android:textColor="#FFFFFF"
+      />
 
   <TextView
       android:layout_width="match_parent"
