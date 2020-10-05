@@ -8,13 +8,14 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Bike implements Serializable {
-    public Bike(int id, String frameNumber, String kindOfBicycle, String brand, String colors, String place, int userId, String missingFound) {
+    public Bike(int id, String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date, int userId, String missingFound) {
         setId(id);
         setFrameNumber(frameNumber);
         setKindOfBicycle(kindOfBicycle);
         setBrand(brand);
         setColors(colors);
         setPlace(place);
+        setDate(date);
         setUserId(userId);
         setMissingFound(missingFound);
     }

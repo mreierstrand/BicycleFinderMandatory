@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bicyclefinder.databinding.ActivityUserLoggedInBinding;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -27,6 +28,8 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private TextView messageView;
     private ProgressBar progressBar;
     private FloatingActionButton floatingActionButton;
+    private FirebaseAuth mAuth;
+
 
     //Opretter en binding
     ActivityUserLoggedInBinding binding;
@@ -41,8 +44,12 @@ public class UserLoggedInActivity extends AppCompatActivity {
         messageView = findViewById(R.id.loggedInMessageTextView);
         progressBar = findViewById(R.id.loggedInProgressBar);
         floatingActionButton = findViewById(R.id.loggedinFloatingActionButton);
+        mAuth = FirebaseAuth.getInstance();
+
 
         Intent intent = getIntent();
+
+
 
         Toast.makeText(UserLoggedInActivity.this, "Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_LONG).show();
 
@@ -101,7 +108,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
 
     private void getAndShowAllBikes() {
         BikeService bikeFinderService = ApiUtils.getBikeService();
-        Call<List<Bike>> getAllBikesCall = bikeFinderService.getAllBikes();
+            Call<List<Bike>> getAllBikesCall = bikeFinderService.getAllBikes();
         messageView.setText("");
         progressBar.setVisibility(View.VISIBLE);
 

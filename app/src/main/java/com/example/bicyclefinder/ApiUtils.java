@@ -30,4 +30,6 @@ class ApiUtils {
 
         return RetrofitClient.getClient(BASE_URL).create(BikeService.class);
     }
+
+
 }

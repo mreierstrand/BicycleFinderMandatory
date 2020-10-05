@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#34495e"
+    android:layout_height="match_parent"
+    tools:context=".DetailedBikeActivity">
+
+    <TextView
+        android:id="@+id/loggedInHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Information om valgte cykel"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textSize="25dp"/>
+
+
+    <EditText
+        android:id="@+id/detailedBikeFrameNoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+
+    <EditText
+        android:id="@+id/detailedBikeKindOfBikeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        />
+
+    <EditText
+        android:id="@+id/detailedBikeBrandEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+
+    <EditText
+        android:id="@+id/detailedBikeColorEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        />
+
+    <EditText
+        android:id="@+id/detailedBikePlaceEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+
+    <EditText
+        android:id="@+id/detailedBikeDateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+
+
+    <EditText
+        android:id="@+id/detailedBikeMissingFoundEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+
+    <Button
+        android:id="@+id/detailedBikeBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:text="tilbage til oversigten"
+        android:onClick="GoBackToListActivityClick"
+        />
+
+    
+</LinearLayout>

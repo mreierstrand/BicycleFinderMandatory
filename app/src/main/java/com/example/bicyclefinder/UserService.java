@@ -20,6 +20,10 @@ public interface UserService {
         @GET("users/{userId}")
         Call<User> getUserById(@Path("Id") int id);
 
+        @GET("users/firebaseuserid/{id}")
+        Call<User> GetUserbyfirebaseId(@Path("Id") int firebaseId);
+
+
         @POST("users")
         @FormUrlEncoded
             // I had problems making this work. I used saveBookBody instead

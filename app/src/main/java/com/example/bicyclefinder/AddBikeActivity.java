@@ -12,9 +12,15 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.Api;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,7 +30,6 @@ public class AddBikeActivity extends AppCompatActivity {
 
     public static final String CURRENTUSER = "CURRENTUSER";
     private User currentUser;
-
 
     ProgressBar progressBar;
 
@@ -46,6 +51,8 @@ public class AddBikeActivity extends AppCompatActivity {
 
     EditText addSted;
     TextView stedError;
+
+    EditText addDato;
 
     TextView message;
     private FirebaseAuth mAuth;
@@ -74,8 +81,15 @@ public class AddBikeActivity extends AppCompatActivity {
         addSted = findViewById(R.id.addBikePlaceEditText);
         stedError = findViewById(R.id.addBikeStedError);
 
-        message = findViewById(R.id.addBikeMessageTextView);
+        addDato = findViewById(R.id.addBikeDateEditText);
+
+//        addDato.setText(new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date()));
+
         progressBar = findViewById(R.id.addBikeProgressBar);
+
+        mAuth = FirebaseAuth.getInstance();
+
+
     }
 
     /*public void onRadioButtonClicked(View view) {
@@ -91,6 +105,30 @@ public class AddBikeActivity extends AppCompatActivity {
                     //Do stuff
                 break;
         }
+    }*/
+
+
+    /*private String getUser() {
+        BikeService userService = ApiUtils.getBikeService();
+        Call<User> getUserCall = userService.getUserbyfirebaseId(mAuth.getUid());
+
+        getUserCall.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User u = response.body();
+
+                }
+                else {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
     }*/
 
     public void AddBikeClick(View view) {
@@ -116,7 +154,9 @@ public class AddBikeActivity extends AppCompatActivity {
             stedError.setVisibility(View.VISIBLE);
             stedError.setText("Sted kan ikke være tom. Skriv noget!");
         } else {
-            Bike bikeToAdd = new Bike(100, stelnummer, type, maerke, farve, sted, currentUser.getId(), getMissingFound());
+//            Bike bikeToAdd = new Bike(100, stelnummer, type, maerke, farve, sted, dato, currentUser.getId(), getMissingFound());
+            Bike bikeToAdd = new Bike(100, stelnummer, type, maerke, farve, sted, "", 1, getMissingFound());
+
 
         BikeService bikeService = ApiUtils.getBikeService();
         Call<Bike> AddBike = bikeService.postBike(bikeToAdd);
@@ -128,15 +168,19 @@ public class AddBikeActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Bike> call, Response<Bike> response) {
                 if (response.isSuccessful()){
-                    message.setTextColor(Color.GREEN);
-                    message.setText("Cykel oprettet");
-                } else message.setText("Der er sket en fejl, prøv igen." + response.message());
-                message.setTextColor(Color.RED);
+                    Toast.makeText(getBaseContext(), "Cykel oprettet!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getBaseContext(), UserLoggedInActivity.class);
+                    startActivity(intent);
+                } else Toast.makeText(getBaseContext(), "Der er sket en fejl, prøv igen",
+                        Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onFailure(Call<Bike> call, Throwable t) {
-                message.setText("Der er sket en fejl, prøv igen. " + t.getMessage());
+                Toast.makeText(getBaseContext(), "Der er sket en fejl, prøv igen",
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }

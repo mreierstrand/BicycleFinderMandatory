@@ -54,7 +54,8 @@
         android:hint="Type"
         android:padding="15dp"
         android:textColor="#FFFFFF"
-        android:inputType="text"
+        android:inputType="textCapWords"
+
         />
     <TextView
         android:id="@+id/addBikeTypeError"
@@ -77,7 +78,7 @@
         android:hint="Mærke"
         android:padding="15dp"
         android:textColor="#FFFFFF"
-        android:inputType="text"
+        android:inputType="textCapWords"
         />
 
     <TextView
@@ -101,7 +102,7 @@
         android:hint="Farve"
         android:padding="15dp"
         android:textColor="#FFFFFF"
-        android:inputType="text"
+        android:inputType="textCapWords"
         />
 
     <TextView
@@ -125,6 +126,8 @@
         android:hint="Sted"
         android:padding="15dp"
         android:textColor="#FFFFFF"
+        android:inputType="textCapWords"
+
         />
     <TextView
         android:id="@+id/addBikeStedError"
@@ -137,7 +140,7 @@
         android:visibility="gone"
         />
 
-   <!-- <EditText
+    <EditText
         android:id="@+id/addBikeDateEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -147,17 +150,11 @@
         android:hint="Dato"
         android:padding="15dp"
         android:textColor="#FFFFFF"
+        android:clickable="false"
+        android:visibility="gone"
         />
--->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FFFFFF"
-        />
+
 
    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -191,15 +188,6 @@
         android:textColor="#FFFFFF"
         android:text="Tilføj cykel"
         android:onClick="AddBikeClick"
-        />
-
-    <TextView
-        android:id="@+id/addBikeMessageTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FFFFFF"
         />
 
     <ProgressBar
