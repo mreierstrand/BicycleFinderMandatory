@@ -16,6 +16,7 @@ import com.example.bicyclefinder.databinding.ActivityUserLoggedInBinding;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private TextView messageView;
     private ProgressBar progressBar;
     private FloatingActionButton floatingActionButton;
+    private FloatingActionButton floatingActionButtonMyPage;
     private FirebaseAuth mAuth;
 
 
@@ -44,6 +46,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
         messageView = findViewById(R.id.loggedInMessageTextView);
         progressBar = findViewById(R.id.loggedInProgressBar);
         floatingActionButton = findViewById(R.id.loggedinFloatingActionButton);
+        floatingActionButtonMyPage = findViewById(R.id.loggedinFloatingActionButtonMyPage);
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -51,7 +54,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(UserLoggedInActivity.this, "Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_LONG).show();
+        Toast.makeText(UserLoggedInActivity.this, "Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT).show();
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +62,17 @@ public class UserLoggedInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(UserLoggedInActivity.this, AddBikeActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        floatingActionButtonMyPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseUser user = mAuth.getCurrentUser();
+                Intent intent = new Intent(UserLoggedInActivity.this, MyPageActivity.class);
+                intent.putExtra("userLoggedInMail", user.getEmail());
+                startActivity(intent);
+                finish();
             }
         });
 

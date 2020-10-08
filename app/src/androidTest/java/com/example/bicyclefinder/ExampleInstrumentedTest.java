@@ -47,7 +47,7 @@ public class ExampleInstrumentedTest {
         //assertEquals("com.example.bicyclefinder", appContext.getPackageName());
 //
           onView(withId(R.id.mainHeader)).check(matches(withText("Bicycle finder")));
-          onView(withId(R.id.mainEmailEditText)).perform(typeText("testtest@testtest.com"));
+          onView(withId(R.id.mainEmailEditText)).perform(typeText("test@test.com"));
           onView(withId(R.id.mainPasswordEditText)).perform(typeText("testtest"));
           onView(withId(R.id.mainLoginButton)).perform(click());
 

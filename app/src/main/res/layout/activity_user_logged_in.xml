@@ -89,6 +89,23 @@
             android:layout_gravity="center"
             android:visibility="gone"/>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:orientation="vertical"
+            app:layout_dodgeInsetEdges="bottom">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/loggedinFloatingActionButtonMyPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="end|bottom"
+            android:contentDescription="loggedinFl"
+            app:srcCompat="@drawable/baseline_person_black_18dp"/>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/loggedinFloatingActionButton"
             android:layout_width="wrap_content"
@@ -96,7 +113,8 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
             android:contentDescription="loggedinFl"
-            app:srcCompat="@drawable/baseline_add_black_18dp"/>
+            app:srcCompat="@drawable/baseline_add_black_18dp" />
+        </LinearLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
