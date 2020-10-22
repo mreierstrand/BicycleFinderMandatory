@@ -123,7 +123,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private void getAndShowAllBikes() {
         BikeService bikeFinderService = ApiUtils.getBikeService();
             Call<List<Bike>> getAllBikesCall = bikeFinderService.getAllBikes();
-        messageView.setText("");
+//        messageView.setText("");
         progressBar.setVisibility(View.VISIBLE);
 
         getAllBikesCall.enqueue(new Callback<List<Bike>>() {
@@ -156,7 +156,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
         BikeService bikeFinderService = ApiUtils.getBikeService();
         Call<List<Bike>> getMissingBikesCall = bikeFinderService.getBikebyMissingFound("missing");
 
-        messageView.setText("");
+        //messageView.setText("");
         progressBar.setVisibility(View.VISIBLE);
 
         getMissingBikesCall.enqueue(new Callback<List<Bike>>() {
@@ -189,7 +189,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
         BikeService bikeFinderService = ApiUtils.getBikeService();
         Call<List<Bike>> getMissingBikesCall = bikeFinderService.getBikebyMissingFound("found");
 
-        messageView.setText("");
+        //messageView.setText("");
         progressBar.setVisibility(View.VISIBLE);
 
         getMissingBikesCall.enqueue(new Callback<List<Bike>>() {

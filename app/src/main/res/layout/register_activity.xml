@@ -19,37 +19,12 @@
         android:textColor="#FFFFFF"
         android:textSize="40dp"/>
 
-    <EditText
-        android:id="@+id/registerFirstNameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:hint="Navn"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-        android:inputType="text"
-        />
-
-    <EditText
-        android:id="@+id/registerLastNameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:hint="Telefon"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-        android:inputType="number"
-        />
 
     <EditText
         android:id="@+id/registerEmailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:width="250dp"

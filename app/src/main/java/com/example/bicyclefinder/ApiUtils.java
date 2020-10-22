@@ -7,12 +7,12 @@ class ApiUtils {
     private final Object BikeService;
     private static ApiUtils apiUtils = null;
     private BikeService bikeService = null;
-    private static final String BASE_URL = "https://anbo-bicyclefinder.azurewebsites.net/api/";
+    private static final String BASE_URL = "https://anbo-bicyclefinderdb.azurewebsites.net/api/";
 
 
     private ApiUtils() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://anbo-bicyclefinder.azurewebsites.net/api/")
+                .baseUrl("https://anbo-bicyclefinderdb.azurewebsites.net/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

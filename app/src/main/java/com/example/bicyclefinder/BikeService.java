@@ -27,7 +27,7 @@ public interface BikeService {
     @FormUrlEncoded
     Call<Bike> saveBike(@Field("Name") String name, @Field("Phone") String phone);
 
-    @POST("Bicycles/")
+    @POST("bicycles/")
     Call<Bike> postBike(@Body Bike bike);
 
     @GET("users")

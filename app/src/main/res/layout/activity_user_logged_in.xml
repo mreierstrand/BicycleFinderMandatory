@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".UserLoggedInActivity">
 
-
     <TextView
         android:id="@+id/loggedInHeader"
         android:layout_width="match_parent"
@@ -74,13 +73,19 @@
             android:layout_marginTop="30dp"
             />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/loggedInMessageTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            />
+            />-->
+
+<!--        <se-->
+<!--            android:id="@+id/Search_bar"-->
+<!--            android:icon="@drawable/ic_baseline_search_24"-->
+<!--            />-->
+
 
         <ProgressBar
             android:id="@+id/loggedInProgressBar"

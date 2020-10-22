@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Bike implements Serializable {
-    public Bike(int id, String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date, int userId, String missingFound) {
+    public Bike(int id, String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date,int userId, String missingFound, String firebaseId, String name, String phone) {
         setId(id);
         setFrameNumber(frameNumber);
         setKindOfBicycle(kindOfBicycle);
@@ -18,6 +18,10 @@ public class Bike implements Serializable {
         setDate(date);
         setUserId(userId);
         setMissingFound(missingFound);
+        setFirebaseId(firebaseId);
+        setName(name);
+        setPhoneNo(phone);
+
     }
 
 
@@ -56,6 +60,20 @@ public class Bike implements Serializable {
     @SerializedName("missingFound")
     @Expose
     private String missingFound;
+
+    @SerializedName("name")
+    @Expose
+    private String name;
+
+    @SerializedName("phone")
+    @Expose
+    private String phone;
+
+    @SerializedName("firebaseId")
+    @Expose
+    private String firebaseId;
+
+
 
     public Bike() {}
 
@@ -115,14 +133,6 @@ public class Bike implements Serializable {
         this.date = date;
     }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
     public String getMissingFound() {
         return missingFound;
     }
@@ -131,15 +141,25 @@ public class Bike implements Serializable {
         this.missingFound = missingFound;
     }
 
+    public String getName() {return name;}
 
-//    @NonNull
-//    @Override
-//    public String toString() {
-//        return "Stelnummer: " + frameNumber + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Sted: " + place + "\n" + "Dato: " + date + "\n" + "UserId: " + userId + "\n \n"; }
-//    }
+    public void setName(String name) {this.name = name;}
+
+    public String getPhoneNo() {return phone;}
+
+    public void setPhoneNo(String phone) {this.phone = phone;}
+
+    public String getFirebaseId() {return firebaseId;}
+
+    public void setFirebaseId(String firebaseId) {this.firebaseId = firebaseId;}
+
+    public int getUserId() {return userId;}
+
+    public void setUserId(int userId) {this.userId = userId;}
+
 
     @NonNull
     @Override
     public String toString() {
-        return "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Sted: " + place + "\n"; }
+        return "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Sted: " + place + "\n" + "Fundet af: " + name + "\n" + "Tlf: " + phone + "\n"; }
 }

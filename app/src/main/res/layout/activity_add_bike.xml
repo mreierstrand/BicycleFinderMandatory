@@ -20,20 +20,49 @@
 
 
     <EditText
-        android:id="@+id/addBikeFrameNoEditText"
+        android:id="@+id/addBikeNameOfPersonEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:width="250dp"
-        android:hint="Stelnummer"
+        android:hint="Dit navn"
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="text"
         />
 
-        <TextView
+    <EditText
+        android:id="@+id/addBikePhoneNoOfPersonEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:hint="Dit telefonnummer"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:inputType="text"
+        />
+
+
+
+
+    <EditText
+        android:id="@+id/addBikeFrameNoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:hint="Cyklens Stelnummer"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:inputType="text"
+        />
+
+     <!--   <TextView
         android:id="@+id/addBikeStelNummerError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +71,7 @@
         android:textColor="#FF6347"
         android:textSize="15dp"
         android:visibility="gone"
-        />
+        />-->
 
     <EditText
         android:id="@+id/addBikeKindOfBikeEditText"
@@ -51,13 +80,14 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:width="250dp"
-        android:hint="Type"
+        android:hint="Cyklens Type"
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
 
         />
-    <TextView
+
+   <!-- <TextView
         android:id="@+id/addBikeTypeError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,7 +96,7 @@
         android:textColor="#FF6347"
         android:textSize="15dp"
         android:visibility="gone"
-        />
+        />-->
 
     <EditText
         android:id="@+id/addBikeBrandEditText"
@@ -75,13 +105,13 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:width="250dp"
-        android:hint="Mærke"
+        android:hint="Cyklens Mærke"
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
         />
 
-    <TextView
+ <!--   <TextView
         android:id="@+id/addBikeMaerkeError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,7 +120,7 @@
         android:textColor="#FF6347"
         android:textSize="15dp"
         android:visibility="gone"
-        />
+        />-->
 
     <EditText
         android:id="@+id/addBikeColorEditText"
@@ -99,13 +129,13 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:width="250dp"
-        android:hint="Farve"
+        android:hint="Cyklens Farve"
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
         />
 
-    <TextView
+ <!--   <TextView
         android:id="@+id/addBikeFarveError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -114,7 +144,7 @@
         android:textColor="#FF6347"
         android:textSize="15dp"
         android:visibility="gone"
-        />
+        />-->
 
     <EditText
         android:id="@+id/addBikePlaceEditText"
@@ -123,13 +153,13 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:width="250dp"
-        android:hint="Sted"
+        android:hint="Sted hvor cyklen er fundet"
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
 
         />
-    <TextView
+  <!--  <TextView
         android:id="@+id/addBikeStedError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -138,7 +168,7 @@
         android:textColor="#FF6347"
         android:textSize="15dp"
         android:visibility="gone"
-        />
+        />-->
 
     <EditText
         android:id="@+id/addBikeDateEditText"
