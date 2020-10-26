@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:background="#34495e"
+    android:layout_height="match_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,10 +15,11 @@
     android:orientation="vertical"
     android:background="#34495e"
     android:layout_height="match_parent"
-    tools:context=".DetailedBikeActivity">
+    tools:context=".MyPageDetailedBikeActivity">
+
 
     <TextView
-        android:id="@+id/loggedInHeader"
+        android:id="@+id/myPageDetailedFrameNoBikeHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Information om valgte cykel"
@@ -25,7 +35,7 @@
 
 
     <EditText
-        android:id="@+id/detailedBikeFrameNoEditText"
+        android:id="@+id/myPageDetailedBikeFrameNoEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -38,7 +48,7 @@
         />
 
     <EditText
-        android:id="@+id/detailedBikeKindOfBikeEditText"
+        android:id="@+id/myPageDetailedBikeBikeKindOfBikeEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -49,7 +59,7 @@
         />
 
     <EditText
-        android:id="@+id/detailedBikeBrandEditText"
+        android:id="@+id/myPageDetailedBikeBikeBrandEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -60,7 +70,7 @@
         />
 
     <EditText
-        android:id="@+id/detailedBikeColorEditText"
+        android:id="@+id/myPageDetailedBikeBikeColorEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -71,7 +81,7 @@
         />
 
     <EditText
-        android:id="@+id/detailedBikePlaceEditText"
+        android:id="@+id/myPageDetailedBikeBikePlaceEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -82,7 +92,7 @@
         />
 
     <EditText
-        android:id="@+id/detailedBikeDateEditText"
+        android:id="@+id/myPageDetailedBikeBikeDateEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -94,7 +104,7 @@
 
 
     <EditText
-        android:id="@+id/detailedBikeMissingFoundEditText"
+        android:id="@+id/myPageDetailedBikeBikeMissingFoundEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -105,7 +115,7 @@
         />
 
     <EditText
-        android:id="@+id/detailedBikeNameEditText"
+        android:id="@+id/myPageDetailedBikeBikeNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -118,7 +128,7 @@
 
 
     <EditText
-        android:id="@+id/detailedBikePhoneNoEditText"
+        android:id="@+id/myPageDetailedBikeBikePhoneNoEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -130,16 +140,29 @@
         />
 
     <Button
-        android:id="@+id/detailedBikeBackButton"
+        android:id="@+id/myPageDetailedBikeDeleteButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="20dp"
         android:textColor="#FFFFFF"
-        android:text="tilbage til oversigten"
-        android:onClick="GoBackToListActivityClick"
+        android:text="Slet cykel"
+        android:onClick="DeleteBikeClickButton"
         />
 
-    
+
+    <Button
+        android:id="@+id/detailedBikeBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#FFFFFF"
+        android:text="tilbage til oversigten"
+        android:onClick="GoBackToMyPageActivityClick"
+        />
+
 </LinearLayout>
+</ScrollView>

@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 
-public class DetailedBikeActivity extends AppCompatActivity {
+public class MyPageDetailedBikeActivity extends AppCompatActivity {
+
     public static final String BIKE = "BIKE";
 
     private Bike wantedBike;
@@ -22,11 +24,11 @@ public class DetailedBikeActivity extends AppCompatActivity {
     EditText dato;
     EditText missingFound;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailed_bike);
+        setContentView(R.layout.activity_my_page_detailed_bike);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         String tabString = "\t \t \t";
 
@@ -34,44 +36,50 @@ public class DetailedBikeActivity extends AppCompatActivity {
         wantedBike = (Bike) intent.getSerializableExtra(BIKE);
 
 
-        stelNummer = findViewById(R.id.detailedBikeFrameNoEditText);
+        stelNummer = findViewById(R.id.myPageDetailedBikeFrameNoEditText);
         stelNummer.setEnabled(false);
         stelNummer.setText("Stelnummer: " + tabString + wantedBike.getFrameNumber());
 
-        type = findViewById(R.id.detailedBikeKindOfBikeEditText);
+        type = findViewById(R.id.myPageDetailedBikeBikeKindOfBikeEditText);
         type.setEnabled(false);
         type.setText("Type: " + tabString + wantedBike.getKindOfBicycle());
 
-        maerke = findViewById(R.id.detailedBikeBrandEditText);
+        maerke = findViewById(R.id.myPageDetailedBikeBikeBrandEditText);
         maerke.setEnabled(false);
         maerke.setText("Mærke: " + tabString + wantedBike.getBrand());
 
-        farve = findViewById(R.id.detailedBikeColorEditText);
+        farve = findViewById(R.id.myPageDetailedBikeBikeColorEditText);
         farve.setEnabled(false);
         farve.setText("Farve: " + tabString + wantedBike.getColors());
 
-        sted = findViewById(R.id.detailedBikePlaceEditText);
+        sted = findViewById(R.id.myPageDetailedBikeBikePlaceEditText);
         sted.setEnabled(false);
         sted.setText("Sted: " + tabString + wantedBike.getPlace());
 
-        dato = findViewById(R.id.detailedBikeDateEditText);
+        dato = findViewById(R.id.myPageDetailedBikeBikeDateEditText);
         dato.setEnabled(false);
         dato.setText("Dato: " + tabString + wantedBike.getDate());
 
-        missingFound = findViewById(R.id.detailedBikeMissingFoundEditText);
+        missingFound = findViewById(R.id.myPageDetailedBikeBikeMissingFoundEditText);
         missingFound.setEnabled(false);
         missingFound.setText("Fremlyst / Efterlyst: " + tabString + wantedBike.getMissingFound());
 
-        name = findViewById(R.id.detailedBikeNameEditText);
+        name = findViewById(R.id.myPageDetailedBikeBikeNameEditText);
         name.setEnabled(false);
         name.setText("Fundet af: " + tabString + wantedBike.getName());
 
-        phoneNo = findViewById(R.id.detailedBikePhoneNoEditText);
+        phoneNo = findViewById(R.id.myPageDetailedBikeBikePhoneNoEditText);
         phoneNo.setEnabled(false);
         phoneNo.setText("Telefonnummer: " + tabString + wantedBike.getPhoneNo());
     }
 
-    public void GoBackToListActivityClick(View view) {
+
+    public void GoBackToMyPageActivityClick(View view) {
         finish();
+
+    }
+
+    public void DeleteBikeClickButton(View view) {
+        //Delete bike code here
     }
 }

@@ -109,6 +109,31 @@
 
         />
 
+        <EditText
+            android:id="@+id/detailedBikeNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+
+            />
+
+
+        <EditText
+            android:id="@+id/detailedBikePhoneNoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+
+            />
+
     <Button
         android:id="@+id/detailedBikeBackButton"
         android:layout_width="match_parent"
@@ -119,6 +144,7 @@
         android:textColor="#FFFFFF"
         android:text="tilbage til oversigten"
         android:onClick="GoBackToListActivityClick"
+        android:layout_marginBottom="25dp"
         />
     </LinearLayout>
     

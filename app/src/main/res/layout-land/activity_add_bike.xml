@@ -24,6 +24,32 @@
 
 
     <EditText
+        android:id="@+id/addBikeNameOfPersonEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:hint="Dit navn"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:inputType="text"
+        />
+
+    <EditText
+        android:id="@+id/addBikePhoneNoOfPersonEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:width="250dp"
+        android:hint="Dit telefonnummer"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:inputType="text"
+        />
+
+    <EditText
         android:id="@+id/addBikeFrameNoEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -187,6 +213,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
         android:textColor="#FFFFFF"
         android:text="Tilføj cykel"
         android:onClick="AddBikeClick"

@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mine cykler"
-        android:layout_marginTop="10dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
@@ -22,7 +21,7 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="150dp"
         >
 
     <androidx.recyclerview.widget.RecyclerView
@@ -75,7 +74,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="20dp"
         android:textColor="#FFFFFF"
         android:text="Oversigt over cykler"
         android:onClick="GoBackToBikesButtonClick"

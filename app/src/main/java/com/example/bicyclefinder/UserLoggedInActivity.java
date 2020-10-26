@@ -31,7 +31,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private FloatingActionButton floatingActionButton;
     private FloatingActionButton floatingActionButtonMyPage;
     private FirebaseAuth mAuth;
-
+    Toast t;
 
     //Opretter en binding
     ActivityUserLoggedInBinding binding;
@@ -48,14 +48,10 @@ public class UserLoggedInActivity extends AppCompatActivity {
         floatingActionButton = findViewById(R.id.loggedinFloatingActionButton);
         floatingActionButtonMyPage = findViewById(R.id.loggedinFloatingActionButtonMyPage);
         mAuth = FirebaseAuth.getInstance();
-
-
         Intent intent = getIntent();
 
-
-
-        Toast.makeText(UserLoggedInActivity.this, "Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT).show();
-
+        t = Toast.makeText(this,"Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT);
+        t.show();
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,20 +80,17 @@ public class UserLoggedInActivity extends AppCompatActivity {
                 if(group.getCheckedButtonId()==R.id.loggedInMissingButton)
                 {
                     getAndShowAllMissingBikes();
-                    //Toast.makeText(UserLoggedInActivity.this, "Efterlyste cykler", Toast.LENGTH_SHORT).show();
                 }
                 else if(group.getCheckedButtonId()==R.id.loggedInFoundButton)
                 {
                     getAndShowAllFoundBikes();
-                    //Toast.makeText(UserLoggedInActivity.this, "Fremlyste cykler", Toast.LENGTH_SHORT).show();
                 }
                 else if(group.getCheckedButtonId()==R.id.loggedInAllButton)
                 {
                     getAndShowAllBikes();
-                    //Toast.makeText(UserLoggedInActivity.this, "Alle cykler", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                        //messageView.setText("Det er sket en fejl, prøv igen");
+                        //Impossible
                 }
             }
         });
@@ -188,8 +181,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private void getAndShowAllFoundBikes() {
         BikeService bikeFinderService = ApiUtils.getBikeService();
         Call<List<Bike>> getMissingBikesCall = bikeFinderService.getBikebyMissingFound("found");
-
-        //messageView.setText("");
         progressBar.setVisibility(View.VISIBLE);
 
         getMissingBikesCall.enqueue(new Callback<List<Bike>>() {
@@ -218,9 +209,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
         });
     }
 
-    private void getAndShowNoneBikes(){
-        messageView.setText("Det er sket en fejl, prøv igen");
-    }
 
     private void populateRecyclerView(List<Bike> allBikes) {
         RecyclerView recyclerView = findViewById(R.id.loggedInRecyclerView);
