@@ -53,6 +53,12 @@ public class MyPageActivity extends AppCompatActivity {
         getAndShowMyBikes();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, UserLoggedInActivity.class);
+        startActivity(intent);
+    }
+
     private void getAndShowMyBikes() {
         String firebaseUserId = mAuth.getCurrentUser().getUid();
         BikeService bikeFinderService = ApiUtils.getBikeService();

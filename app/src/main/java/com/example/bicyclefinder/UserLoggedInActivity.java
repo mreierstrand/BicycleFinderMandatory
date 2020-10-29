@@ -50,8 +50,17 @@ public class UserLoggedInActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         Intent intent = getIntent();
 
-        t = Toast.makeText(this,"Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT);
-        t.show();
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+
+        //Kører kun velkomsttoast 1. gang activitien bliver kørt
+        if (isFirstRun) {
+            t = Toast.makeText(this,"Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT);
+            t.show();
+        }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).commit();
+
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,7 +217,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void populateRecyclerView(List<Bike> allBikes) {
         RecyclerView recyclerView = findViewById(R.id.loggedInRecyclerView);
