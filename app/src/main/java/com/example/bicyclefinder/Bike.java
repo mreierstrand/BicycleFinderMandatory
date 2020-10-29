@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Bike implements Serializable {
-    public Bike(String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date,int userId, String missingFound, String firebaseUserId, String name, String phone) {
+    public Bike(String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date, int userId, String missingFound, String firebaseUserId, String name, String phone) {
         setFrameNumber(frameNumber);
         setKindOfBicycle(kindOfBicycle);
         setBrand(brand);
@@ -20,7 +20,6 @@ public class Bike implements Serializable {
         setFirebaseUserId(firebaseUserId);
         setName(name);
         setPhoneNo(phone);
-
     }
 
 

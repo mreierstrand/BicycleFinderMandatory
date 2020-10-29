@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         messageView.setText("");
         EditText emailView = findViewById(R.id.mainEmailEditText);
         EditText passwordView = findViewById(R.id.mainPasswordEditText);
-        emailView.setText("");
+        //emailView.setText("");
         passwordView.setText("");
         passwordView.clearFocus();
     }

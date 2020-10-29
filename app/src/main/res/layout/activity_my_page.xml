@@ -22,17 +22,15 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        >
+        android:layout_height="354dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/loggedInRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="375dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/loggedInRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="344dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp" />
 
 
         <ProgressBar
@@ -40,8 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"/>
-
+            android:visibility="gone" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -53,7 +50,6 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:textColor="#FFFFFF"
-        android:visibility="gone"
         />
 
 

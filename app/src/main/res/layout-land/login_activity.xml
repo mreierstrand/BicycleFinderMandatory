@@ -10,16 +10,6 @@
     tools:ignore="MissingDefaultResource">
 
   <TextView
-      android:id="@+id/mainHeader"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Bicycle finder"
-      android:textAlignment="center"
-      android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-      android:textColor="#FFFFFF"
-      android:textSize="40dp"/>
-
-  <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Login"
@@ -29,16 +19,17 @@
       android:textSize="30dp"/>
 
   <EditText
-      android:id="@+id/mainUsernameEditText"
+      android:id="@+id/mainEmailEditText"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
       android:layout_marginStart="30dp"
       android:layout_marginEnd="30dp"
       android:width="250dp"
-      android:hint="Brugernavn"
+      android:hint="Email"
       android:padding="15dp"
       android:textColor="#FFFFFF"
-      android:inputType="text"
+      android:inputType="textEmailAddress"
 
       />
 
@@ -63,7 +54,19 @@
       android:layout_marginEnd="30dp"
       android:layout_marginTop="10dp"
       android:text="Login"
+      android:onClick="LoginUserClick"
     />
+
+  <Button
+      android:id="@+id/mainLoginButtonAUTO"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      android:text="Login Auto"
+      android:onClick="LoginUserClickAUTO"
+      />
+
 
   <TextView
       android:id="@+id/mainMessageTextView"
@@ -71,6 +74,7 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="30dp"
       android:layout_marginEnd="30dp"
+      android:textColor="#FFFFFF"
       />
 
   <TextView
@@ -90,7 +94,7 @@
       android:layout_marginEnd="30dp"
       android:layout_marginTop="10dp"
       android:text="Registrér dig her"
-      android:onClick="mainRegisterButton" />
+      android:onClick="mainRegisterButtonClick" />
 
 
 

@@ -18,11 +18,13 @@
     tools:context=".MyPageDetailedBikeActivity">
 
 
+
     <TextView
         android:id="@+id/myPageDetailedFrameNoBikeHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Information om valgte cykel"
+        android:layout_marginTop="10dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
@@ -135,8 +137,24 @@
         android:width="250dp"
         android:padding="15dp"
         android:textColor="#FFFFFF"
-
         />
+
+    <TextView
+        android:id="@+id/myDetailedPageMessageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="#FFFFFF"
+        />
+
+    <ProgressBar
+        android:id="@+id/myPageDetailedProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/myPageDetailedBikeDeleteButton"
@@ -144,7 +162,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textColor="#FFFFFF"
         android:text="Slet cykel"
         android:onClick="DeleteBikeClickButton"

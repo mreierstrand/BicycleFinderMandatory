@@ -8,7 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.common.api.Api;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,8 +28,8 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
     private static final String LOG_TAG = "myPage";
 
     private Bike wantedBike;
+    ProgressBar progressBar;
 
-    EditText id;
     EditText name;
     EditText phoneNo;
     EditText stelNummer;
@@ -35,6 +43,8 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
     TextView messageView;
 
     private Bike currentBike;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +56,6 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         wantedBike = (Bike) intent.getSerializableExtra(BIKE);
-
-        id = findViewById(R.id.myPageDetailedBikeIdEditText);
-        id.setEnabled(false);
-        id.setText("id: " + tabString + wantedBike.getId());
-
 
         stelNummer = findViewById(R.id.myPageDetailedBikeFrameNoEditText);
         stelNummer.setEnabled(false);
@@ -88,7 +93,10 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
         phoneNo.setEnabled(false);
         phoneNo.setText("Telefonnummer: " + tabString + wantedBike.getPhoneNo());
 
-        messageView = findViewById(R.id.myPageMessageTextView);
+        messageView = findViewById(R.id.myDetailedPageMessageTextView);
+        progressBar = findViewById(R.id.myPageDetailedProgressBar);
+        mAuth = FirebaseAuth.getInstance();
+
     }
 
 
@@ -98,24 +106,29 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
     }
 
     public void DeleteBikeClickButton(View view) {
-            Call<String> callDeleteBike = ApiUtils.getBikeService().deleteBike(currentBike.getId());
-            callDeleteBike.enqueue(new Callback<String>() {
+        BikeService bikeService = ApiUtils.getBikeService();
+        int bikeId = wantedBike.getId();
+        Call<Integer> callDeleteBike = bikeService.deleteBike(bikeId);
+        progressBar.setVisibility(View.VISIBLE);
+        callDeleteBike.enqueue(new Callback<Integer>() {
                 @Override
-                public void onResponse(Call<String> call, Response<String> response) {
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
                     if (response.isSuccessful()){
-                        messageView.setVisibility(View.VISIBLE);
                         messageView.setText("Cykel er slettet");
-                        Log.d(LOG_TAG, "Cykel med stelnummer: " + currentBike.getFrameNumber() + " er slettet");
+                        Toast.makeText(getBaseContext(), "Cykel slettet!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getBaseContext(), MyPageActivity.class);
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        intent.putExtra("userLoggedIn", user.getEmail());
+                        startActivity(intent);
+                        Log.d(LOG_TAG, "Cykel med stelnummer: " + wantedBike.getFrameNumber() + " er slettet");
                     } else {
                         Log.d(LOG_TAG, "Der er sket en fejl :-(");
-                        messageView.setVisibility(View.VISIBLE);
                         messageView.setText("Cyklen er ikke blevet slettet.");
                     }
                 }
 
                 @Override
-                public void onFailure(Call<String> call, Throwable t) {
-                    messageView.setVisibility(View.VISIBLE);
+                public void onFailure(Call<Integer> call, Throwable t) {
                     messageView.setText(t.getMessage());
                 }
             });
