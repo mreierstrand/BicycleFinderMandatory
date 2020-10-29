@@ -34,6 +34,7 @@
         android:layout_marginTop="10dp"
         />
 
+
         <ProgressBar
             android:id="@+id/myPageProgressBar"
             android:layout_width="wrap_content"
@@ -42,9 +43,18 @@
             android:visibility="gone"/>
 
 
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
+    <TextView
+        android:id="@+id/myPageMessageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        />
 
 
     <TextView

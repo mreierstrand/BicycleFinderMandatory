@@ -10,6 +10,7 @@ class ApiUtils {
     private static final String BASE_URL = "https://anbo-bicyclefinderdb.azurewebsites.net/api/";
 
 
+
     private ApiUtils() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://anbo-bicyclefinderdb.azurewebsites.net/api/")

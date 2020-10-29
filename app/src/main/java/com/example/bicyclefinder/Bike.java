@@ -8,8 +8,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Bike implements Serializable {
-    public Bike(int id, String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date,int userId, String missingFound, String firebaseId, String name, String phone) {
-        setId(id);
+    public Bike(String frameNumber, String kindOfBicycle, String brand, String colors, String place, String date,int userId, String missingFound, String firebaseUserId, String name, String phone) {
         setFrameNumber(frameNumber);
         setKindOfBicycle(kindOfBicycle);
         setBrand(brand);
@@ -18,7 +17,7 @@ public class Bike implements Serializable {
         setDate(date);
         setUserId(userId);
         setMissingFound(missingFound);
-        setFirebaseId(firebaseId);
+        setFirebaseUserId(firebaseUserId);
         setName(name);
         setPhoneNo(phone);
 
@@ -69,9 +68,9 @@ public class Bike implements Serializable {
     @Expose
     private String phone;
 
-    @SerializedName("firebaseId")
+    @SerializedName("firebaseUserId")
     @Expose
-    private String firebaseId;
+    private String firebaseUserId;
 
 
 
@@ -149,9 +148,9 @@ public class Bike implements Serializable {
 
     public void setPhoneNo(String phone) {this.phone = phone;}
 
-    public String getFirebaseId() {return firebaseId;}
+    public String getFirebaseUserId() {return firebaseUserId;}
 
-    public void setFirebaseId(String firebaseId) {this.firebaseId = firebaseId;}
+    public void setFirebaseUserId(String firebaseUserId) {this.firebaseUserId = firebaseUserId;}
 
     public int getUserId() {return userId;}
 

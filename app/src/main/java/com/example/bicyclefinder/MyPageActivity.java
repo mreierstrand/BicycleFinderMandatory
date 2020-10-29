@@ -28,14 +28,16 @@ public class MyPageActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
     private static final String LOG_TAG = "FoundCycles";
+    private FirebaseAuth mAuth;
+    private Bike currentBike;
+    private TextView messageView;
 
 
-
-    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_page);
+
 
         Intent intent = getIntent();
         intent.getStringExtra("userLoggedInMail");
@@ -46,16 +48,18 @@ public class MyPageActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.myPageProgressBar);
+        messageView = findViewById(R.id.myPageMessageTextView);
 
-        getAndShowAllBikes();
+        getAndShowMyBikes();
     }
 
-    private void getAndShowAllBikes() {
+    private void getAndShowMyBikes() {
+        String firebaseUserId = mAuth.getCurrentUser().getUid();
         BikeService bikeFinderService = ApiUtils.getBikeService();
-        Call<List<Bike>> getAllBikesCall = bikeFinderService.getAllBikes();
+        Call<List<Bike>> getMyBikesCall = bikeFinderService.getBikesbyFirebaseId(firebaseUserId);
         progressBar.setVisibility(View.VISIBLE);
 
-        getAllBikesCall.enqueue(new Callback<List<Bike>>() {
+        getMyBikesCall.enqueue(new Callback<List<Bike>>() {
             @Override
             public void onResponse(Call<List<Bike>> call, Response<List<Bike>> response) {
                 Log.d(LOG_TAG, response.raw().toString());
@@ -78,6 +82,8 @@ public class MyPageActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void populateRecyclerView(List<Bike> allBikes) {
         RecyclerView recyclerView = findViewById(R.id.loggedInRecyclerView);
         Log.d(LOG_TAG, "FindBikes" + allBikes.toString());
@@ -98,8 +104,6 @@ public class MyPageActivity extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
-
     }
 
     public void LogoutButtonClick(View view) {

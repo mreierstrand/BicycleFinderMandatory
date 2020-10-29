@@ -4,16 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MyPageDetailedBikeActivity extends AppCompatActivity {
 
     public static final String BIKE = "BIKE";
+    private static final String LOG_TAG = "myPage";
 
     private Bike wantedBike;
 
+    EditText id;
     EditText name;
     EditText phoneNo;
     EditText stelNummer;
@@ -23,6 +31,10 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
     EditText sted;
     EditText dato;
     EditText missingFound;
+
+    TextView messageView;
+
+    private Bike currentBike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +46,10 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         wantedBike = (Bike) intent.getSerializableExtra(BIKE);
+
+        id = findViewById(R.id.myPageDetailedBikeIdEditText);
+        id.setEnabled(false);
+        id.setText("id: " + tabString + wantedBike.getId());
 
 
         stelNummer = findViewById(R.id.myPageDetailedBikeFrameNoEditText);
@@ -71,6 +87,8 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
         phoneNo = findViewById(R.id.myPageDetailedBikeBikePhoneNoEditText);
         phoneNo.setEnabled(false);
         phoneNo.setText("Telefonnummer: " + tabString + wantedBike.getPhoneNo());
+
+        messageView = findViewById(R.id.myPageMessageTextView);
     }
 
 
@@ -80,6 +98,27 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
     }
 
     public void DeleteBikeClickButton(View view) {
-        //Delete bike code here
+            Call<String> callDeleteBike = ApiUtils.getBikeService().deleteBike(currentBike.getId());
+            callDeleteBike.enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    if (response.isSuccessful()){
+                        messageView.setVisibility(View.VISIBLE);
+                        messageView.setText("Cykel er slettet");
+                        Log.d(LOG_TAG, "Cykel med stelnummer: " + currentBike.getFrameNumber() + " er slettet");
+                    } else {
+                        Log.d(LOG_TAG, "Der er sket en fejl :-(");
+                        messageView.setVisibility(View.VISIBLE);
+                        messageView.setText("Cyklen er ikke blevet slettet.");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+                    messageView.setVisibility(View.VISIBLE);
+                    messageView.setText(t.getMessage());
+                }
+            });
     }
+
 }

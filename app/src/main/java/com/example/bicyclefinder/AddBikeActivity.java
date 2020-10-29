@@ -34,7 +34,6 @@ import retrofit2.Response;
 public class AddBikeActivity extends AppCompatActivity {
 
     public static final String CURRENTUSER = "CURRENTUSER";
-    private User currentUser;
 
     ProgressBar progressBar;
 
@@ -52,6 +51,7 @@ public class AddBikeActivity extends AppCompatActivity {
     EditText addDato;
 
     TextView message;
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -87,7 +87,7 @@ public class AddBikeActivity extends AppCompatActivity {
         String maerke = addMaerke.getText().toString().trim();
         String farve = addFarve.getText().toString().trim();
         String sted = addSted.getText().toString().trim();
-        String firebaseId = mAuth.getCurrentUser().getUid();
+        String firebaseUserId = mAuth.getCurrentUser().getUid();
 
         int errorColor = ContextCompat.getColor(getApplicationContext(),R.color.errorColor);
         ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(errorColor);
@@ -130,7 +130,7 @@ public class AddBikeActivity extends AppCompatActivity {
             spannableStringBuilder.setSpan(foregroundColorSpan, 0, errorString.length(), 0);
             addSted.setError(spannableStringBuilder);
         } else {
-            Bike bikeToAdd = new Bike(100, stelnummer, type, maerke, farve, sted, "",1, getMissingFound(), firebaseId, name, phone);
+            Bike bikeToAdd = new Bike(stelnummer, type, maerke, farve, sted, "",1, getMissingFound(), firebaseUserId, name, phone);
 
 
         BikeService bikeService = ApiUtils.getBikeService();
