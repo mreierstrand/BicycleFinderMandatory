@@ -56,8 +56,6 @@
         android:layout_marginTop="10dp"
         android:text="Opret bruger"
         />
-        //android:onClick="RegisterUserClick"
-
 
     <TextView
         android:id="@+id/mainMessageTextView"
@@ -73,5 +71,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/registerGoBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="200dp"
+        android:text="Gå tilbage"
+        />
 
 </LinearLayout>

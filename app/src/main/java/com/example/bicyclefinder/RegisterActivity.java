@@ -22,15 +22,20 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.logging.Handler;
 
+import render.animations.Bounce;
+import render.animations.Render;
+
 public class RegisterActivity extends AppCompatActivity {
 
     public static final String TAG = "RegisterMe";
     private FirebaseAuth mAuth;
     private Object AuthResult;
     private TextView messageView;
-    private Button registerButton;
+    private Button registerButton, returnButton;
     private ProgressBar progressBar;
     private EditText emailText, passwordText;
+    Render render = new Render(RegisterActivity.this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +43,26 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.register_activity);
         messageView = findViewById(R.id.mainMessageTextView);
         mAuth = FirebaseAuth.getInstance();
-        initializeUI();
+
+        emailText = findViewById(R.id.registerEmailEditText);
+        passwordText = findViewById(R.id.registerPasswordEditText);
+        registerButton = findViewById(R.id.registerCreateUserButton);
+        progressBar = findViewById(R.id.registerProgressBar);
+        returnButton = findViewById(R.id.registerGoBackButton);
+
+        render.setAnimation(Bounce.InUp(emailText));
+        render.setDuration(2000);
+        render.start();
+
+        render.setAnimation(Bounce.InUp(passwordText));
+        render.setDuration(2000);
+        render.start();
+
+        render.setAnimation(Bounce.InUp(registerButton));
+        render.setDuration(2000);
+        render.start();
+
+
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +70,14 @@ public class RegisterActivity extends AppCompatActivity {
                 RegisterUserClick();
             }
         });
+
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
     }
 
     private void RegisterUserClick() {
@@ -54,6 +86,12 @@ public class RegisterActivity extends AppCompatActivity {
         String email, password;
         email = emailText.getText().toString().trim();
         password = passwordText.getText().toString().trim();
+
+        if (TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Ingenting indtastet", Toast.LENGTH_LONG).show();
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Ingen email indtastet", Toast.LENGTH_LONG).show();
@@ -106,12 +144,5 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    private void initializeUI() {
-        emailText = findViewById(R.id.registerEmailEditText);
-        passwordText = findViewById(R.id.registerPasswordEditText);
-        registerButton = findViewById(R.id.registerCreateUserButton);
-        progressBar = findViewById(R.id.registerProgressBar);
     }
 }
