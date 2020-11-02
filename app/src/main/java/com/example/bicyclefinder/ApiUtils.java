@@ -9,8 +9,6 @@ class ApiUtils {
     private BikeService bikeService = null;
     private static final String BASE_URL = "https://anbo-bicyclefinderdb.azurewebsites.net/api/";
 
-
-
     private ApiUtils() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://anbo-bicyclefinderdb.azurewebsites.net/api/")
@@ -25,10 +23,7 @@ class ApiUtils {
         return apiUtils;
     }
 
-
-
     public static BikeService getBikeService(){
-
         return RetrofitClient.getClient(BASE_URL).create(BikeService.class);
     }
 

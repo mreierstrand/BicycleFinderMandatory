@@ -39,7 +39,6 @@ public class MyPageActivity extends AppCompatActivity {
     private TextView messageView;
     private MaterialToolbar topAppBar;
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -53,7 +52,6 @@ public class MyPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_page);
 
         topAppBar = findViewById(R.id.topAppBar);
-
         topAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,8 +110,6 @@ public class MyPageActivity extends AppCompatActivity {
         });
     }
 
-
-
     private void populateRecyclerView(List<Bike> allBikes) {
         RecyclerView recyclerView = findViewById(R.id.loggedInRecyclerView);
         Log.d(LOG_TAG, "FindBikes" + allBikes.toString());
@@ -136,25 +132,16 @@ public class MyPageActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void LogoutButtonClick(View view) {
-        mAuth.signOut();
-        finish();
-//        startActivity(new Intent(this,LoginActivity.class));
-    }
-
     public void GoBackToBikesButtonClick(View view) {
-
         FirebaseUser user = mAuth.getCurrentUser();
         Intent intent = new Intent(MyPageActivity.this, UserLoggedInActivity.class);
         intent.putExtra("userLoggedInMail", user.getEmail());
         startActivity(intent);
-
-
-        //finish();
     }
 
     public void MenulogoutClicked(MenuItem item) {
         mAuth.signOut();
-        finish();
+        Intent intent = new Intent(MyPageActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 }

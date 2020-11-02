@@ -110,8 +110,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
         super.onStart();
         getAndShowAllBikes();
         floatingActionButton.show();
-        //getAndShowAllMissingBikes();
-        //getAndShowAllFoundBikes();
     }
 
     @Override
@@ -124,8 +122,7 @@ public class UserLoggedInActivity extends AppCompatActivity {
 
     private void getAndShowAllBikes() {
         BikeService bikeFinderService = ApiUtils.getBikeService();
-            Call<List<Bike>> getAllBikesCall = bikeFinderService.getAllBikes();
-//        messageView.setText("");
+        Call<List<Bike>> getAllBikesCall = bikeFinderService.getAllBikes();
         progressBar.setVisibility(View.VISIBLE);
 
         getAllBikesCall.enqueue(new Callback<List<Bike>>() {

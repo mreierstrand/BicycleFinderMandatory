@@ -45,7 +45,6 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
     private Bike currentBike;
     private FirebaseAuth mAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,13 +95,11 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
         messageView = findViewById(R.id.myDetailedPageMessageTextView);
         progressBar = findViewById(R.id.myPageDetailedProgressBar);
         mAuth = FirebaseAuth.getInstance();
-
     }
 
 
     public void GoBackToMyPageActivityClick(View view) {
         finish();
-
     }
 
     public void DeleteBikeClickButton(View view) {
@@ -111,27 +108,26 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
         Call<Integer> callDeleteBike = bikeService.deleteBike(bikeId);
         progressBar.setVisibility(View.VISIBLE);
         callDeleteBike.enqueue(new Callback<Integer>() {
-                @Override
-                public void onResponse(Call<Integer> call, Response<Integer> response) {
-                    if (response.isSuccessful()){
-                        messageView.setText("Cykel er slettet");
-                        Toast.makeText(getBaseContext(), "Cykel slettet!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getBaseContext(), MyPageActivity.class);
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        intent.putExtra("userLoggedIn", user.getEmail());
-                        startActivity(intent);
-                        Log.d(LOG_TAG, "Cykel med stelnummer: " + wantedBike.getFrameNumber() + " er slettet");
-                    } else {
-                        Log.d(LOG_TAG, "Der er sket en fejl :-(");
-                        messageView.setText("Cyklen er ikke blevet slettet.");
-                    }
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                if (response.isSuccessful()) {
+                    messageView.setText("Cykel er slettet");
+                    Toast.makeText(getBaseContext(), "Cykel slettet!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getBaseContext(), MyPageActivity.class);
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    intent.putExtra("userLoggedIn", user.getEmail());
+                    startActivity(intent);
+                    Log.d(LOG_TAG, "Cykel med stelnummer: " + wantedBike.getFrameNumber() + " er slettet");
+                } else {
+                    Log.d(LOG_TAG, "Der er sket en fejl :-(");
+                    messageView.setText("Cyklen er ikke blevet slettet.");
                 }
+            }
 
-                @Override
-                public void onFailure(Call<Integer> call, Throwable t) {
-                    messageView.setText(t.getMessage());
-                }
-            });
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                messageView.setText(t.getMessage());
+            }
+        });
     }
-
 }

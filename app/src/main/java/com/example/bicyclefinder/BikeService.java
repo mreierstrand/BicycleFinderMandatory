@@ -35,5 +35,4 @@ public interface BikeService {
 
     @DELETE("bicycles/{id}")
     Call<Integer> deleteBike(@Path("id") int id);
-
 }

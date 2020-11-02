@@ -50,7 +50,6 @@ public class AddBikeActivity extends AppCompatActivity {
     EditText addSted;
     EditText addDato;
 
-    TextView message;
 
     private FirebaseAuth mAuth;
 
@@ -72,12 +71,9 @@ public class AddBikeActivity extends AppCompatActivity {
         addSted = findViewById(R.id.addBikePlaceEditText);
         addDato = findViewById(R.id.addBikeDateEditText);
 
-//        addDato.setText(new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date()));
-
         progressBar = findViewById(R.id.addBikeProgressBar);
         mAuth = FirebaseAuth.getInstance();
     }
-
 
     public void AddBikeClick(View view) {
         String name = addNameOfPerson.getText().toString().trim();
@@ -135,10 +131,8 @@ public class AddBikeActivity extends AppCompatActivity {
 
         BikeService bikeService = ApiUtils.getBikeService();
         Call<Bike> AddBike = bikeService.postBike(bikeToAdd);
-
-//        Call<Bike> AddBike = ApiUtils.GetInstance().getBikeService().postBike(bikeToAdd);
-
         progressBar.setVisibility(View.VISIBLE);
+
         AddBike.enqueue(new Callback<Bike>() {
             @Override
             public void onResponse(Call<Bike> call, Response<Bike> response) {

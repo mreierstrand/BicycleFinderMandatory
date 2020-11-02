@@ -55,22 +55,12 @@ public class RegisterActivity extends AppCompatActivity {
         email = emailText.getText().toString().trim();
         password = passwordText.getText().toString().trim();
 
-
-//        if ("".equals(email)) {
-//            messageView.setText("Ingen email indtastet");
-//            return;
-//        }
-//        if ("".equals(password)) {
-//            messageView.setText("Intet password indtastet");
-//            return;
-//        }
-
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Ingen email indtastet", Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.GONE);
             return;
-
         }
+
         if (TextUtils.isEmpty(password)) {
             Toast.makeText(getApplicationContext(), "Intet password indtastet", Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.GONE);
@@ -86,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             //messageView.setText("Bruger oprettet, gå til login");
-                            Toast.makeText(getApplicationContext(),"Registrering færdiggjort! Vent venligst", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Registrering færdiggjort! Vent venligst", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
 
                             new Thread(new Runnable() {
@@ -107,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                             try {
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
                                 //messageView.setText("Der er opstået et problem, prøv igen");
-                                Toast.makeText(getApplicationContext(),"Registrering mislykkedes. Prøv igen", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Registrering mislykkedes. Prøv igen", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                                 AuthResult result = task.getResult();
                             } catch (RuntimeException ex) {
@@ -115,17 +105,13 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         }
                     }
-
-                    // ...
                 });
-    };
-
-    private void initializeUI(){
-    emailText = findViewById(R.id.registerEmailEditText);
-    passwordText = findViewById(R.id.registerPasswordEditText);
-    registerButton = findViewById(R.id.registerCreateUserButton);
-    progressBar = findViewById(R.id.registerProgressBar);
     }
 
-
+    private void initializeUI() {
+        emailText = findViewById(R.id.registerEmailEditText);
+        passwordText = findViewById(R.id.registerPasswordEditText);
+        registerButton = findViewById(R.id.registerCreateUserButton);
+        progressBar = findViewById(R.id.registerProgressBar);
+    }
 }

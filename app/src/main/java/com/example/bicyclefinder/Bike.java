@@ -22,7 +22,6 @@ public class Bike implements Serializable {
         setPhoneNo(phone);
     }
 
-
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -70,8 +69,6 @@ public class Bike implements Serializable {
     @SerializedName("firebaseUserId")
     @Expose
     private String firebaseUserId;
-
-
 
     public Bike() {}
 
@@ -155,9 +152,8 @@ public class Bike implements Serializable {
 
     public void setUserId(int userId) {this.userId = userId;}
 
-
     @NonNull
     @Override
     public String toString() {
         return "Mærke: " + brand + "\n" + "Farve: " + colors + "\n" + "Cykeltype: " + kindOfBicycle + "\n" + "Sted: " + place + "\n" + "Fundet af: " + name + "\n" + "Tlf: " + phone + "\n"; }
-}
+    }

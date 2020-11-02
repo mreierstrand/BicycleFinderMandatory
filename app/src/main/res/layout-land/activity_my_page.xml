@@ -39,7 +39,7 @@
         android:id="@+id/myPageMyBikesHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mine cykler"
+        android:text="Mine tilføjede cykler"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
@@ -112,29 +112,6 @@
         android:onClick="GoBackToBikesButtonClick"
         />
 
-    <Button
-        android:id="@+id/detailedBikeLogOutButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:textColor="#FFFFFF"
-        android:text="Log ud"
-        android:onClick="LogoutButtonClick"
-        />
-
-    <!--<Button
-        android:id="@+id/detailedBikeBackButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="5dp"
-        android:textColor="#FFFFFF"
-        android:text="Tilbage til oversigt"
-        android:onClick="backToUserLoggedInActivityButtonClick"
-        />-->
 
 </LinearLayout>
 

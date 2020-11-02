@@ -18,14 +18,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
 public class LoginActivity extends AppCompatActivity {
 
     public static final String TAG = "LogMeIn";
     private FirebaseAuth mAuth;
     private Object AuthResult;
     private TextView messageView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         messageView.setText("");
         EditText emailView = findViewById(R.id.mainEmailEditText);
         EditText passwordView = findViewById(R.id.mainPasswordEditText);
-        //emailView.setText("");
         passwordView.setText("");
         passwordView.clearFocus();
     }
@@ -83,14 +80,10 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(getBaseContext(), UserLoggedInActivity.class);
                             intent.putExtra("userLoggedIn", user.getEmail());
                             startActivity(intent);
-
-                            //messageView.setText("Velkommen " + user.getEmail());
-
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(getBaseContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
                             messageView.setText("Du er ikke oprettet i systemet");
                             messageView.setTextColor(Color.RED);
                         }

@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Mine cykler"
+        android:text="Mine tilføjede cykler"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
@@ -37,12 +37,12 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="320dp">
+        android:layout_height="391dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/loggedInRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="285dp"
+            android:layout_height="391dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp" />
@@ -99,27 +99,5 @@
         android:onClick="GoBackToBikesButtonClick"
         android:text="Oversigt over cykler"
         android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/detailedBikeLogOutButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="LogoutButtonClick"
-        android:text="Log ud"
-        android:textColor="#FFFFFF" />
-
-    <!--<Button
-        android:id="@+id/detailedBikeBackButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="5dp"
-        android:textColor="#FFFFFF"
-        android:text="Tilbage til oversigt"
-        android:onClick="backToUserLoggedInActivityButtonClick"
-        />-->
 
 </LinearLayout>
