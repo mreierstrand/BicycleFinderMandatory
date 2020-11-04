@@ -7,7 +7,8 @@
     android:background="#222831"
     android:orientation="vertical"
     tools:context=".LoginActivity"
-    tools:ignore="MissingDefaultResource">
+    tools:ignore="MissingDefaultResource"
+    >
 
   <TextView
       android:id="@+id/mainHeader"
@@ -19,7 +20,8 @@
       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
       android:textColor="#FFFFFF"
       android:textSize="40dp"
-      android:fontFamily="sans-serif-thin"/>
+      android:fontFamily="sans-serif-thin"
+      />
 
   <TextView
       android:id="@+id/mainSubHeader"
@@ -30,7 +32,8 @@
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
       android:textColor="#FFFFFF"
-      android:textSize="30dp"/>
+      android:textSize="30dp"
+      />
 
   <EditText
       android:id="@+id/mainEmailEditText"
@@ -44,7 +47,6 @@
       android:padding="15dp"
       android:textColor="#FFFFFF"
       android:inputType="textEmailAddress"
-
       />
 
   <EditText
@@ -82,7 +84,6 @@
       android:onClick="LoginUserClickAUTO"
       />
 
-
   <TextView
       android:id="@+id/mainMessageTextView"
       android:layout_width="match_parent"
@@ -100,7 +101,8 @@
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
       android:textColor="#FFFFFF"
-      android:textSize="30dp"/>
+      android:textSize="30dp"
+      />
 
   <Button
       android:id="@+id/mainRegisterButton"
@@ -110,10 +112,6 @@
       android:layout_marginEnd="30dp"
       android:layout_marginTop="10dp"
       android:text="Registrér dig her!"
-      android:onClick="mainRegisterButtonClick" />
-
-
-
-
-
+      android:onClick="mainRegisterButtonClick"
+      />
 </LinearLayout>

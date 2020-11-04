@@ -31,7 +31,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private FloatingActionButton floatingActionButton;
     private FloatingActionButton floatingActionButtonMyPage;
     private FirebaseAuth mAuth;
-    Toast t;
 
     //Opretter en binding
     ActivityUserLoggedInBinding binding;
@@ -48,19 +47,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
         floatingActionButton = findViewById(R.id.loggedinFloatingActionButton);
         floatingActionButtonMyPage = findViewById(R.id.loggedinFloatingActionButtonMyPage);
         mAuth = FirebaseAuth.getInstance();
-        Intent intent = getIntent();
-
-        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-                .getBoolean("isFirstRun", true);
-
-        //Kører kun velkomsttoast 1. gang activitien bliver kørt
-        if (isFirstRun) {
-            t = Toast.makeText(this,"Velkommen " + intent.getStringExtra("userLoggedIn"), Toast.LENGTH_SHORT);
-            t.show();
-        }
-        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-                .putBoolean("isFirstRun", false).commit();
-
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +105,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
         floatingActionButton.hide();
     }
 
-
     private void getAndShowAllBikes() {
         BikeService bikeFinderService = ApiUtils.getBikeService();
         Call<List<Bike>> getAllBikesCall = bikeFinderService.getAllBikes();
@@ -154,8 +139,6 @@ public class UserLoggedInActivity extends AppCompatActivity {
     private void getAndShowAllMissingBikes() {
         BikeService bikeFinderService = ApiUtils.getBikeService();
         Call<List<Bike>> getMissingBikesCall = bikeFinderService.getBikebyMissingFound("missing");
-
-        //messageView.setText("");
         progressBar.setVisibility(View.VISIBLE);
 
         getMissingBikesCall.enqueue(new Callback<List<Bike>>() {
@@ -231,7 +214,4 @@ public class UserLoggedInActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
-
-
 }

@@ -21,7 +21,6 @@ public class RecyclerViewAdapter<T> extends RecyclerView.Adapter<RecyclerViewAda
     private OnItemClickListener<T> onItemClickListener;
     private final int viewId = View.generateViewId();
 
-
     public RecyclerViewAdapter(List<T> data) {
         this.data = data;
         Log.d(LOG_TAG, data.toString());

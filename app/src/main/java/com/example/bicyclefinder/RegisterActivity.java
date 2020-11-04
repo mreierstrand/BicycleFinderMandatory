@@ -36,7 +36,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText emailText, passwordText;
     Render render = new Render(RegisterActivity.this);
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,8 +61,6 @@ public class RegisterActivity extends AppCompatActivity {
         render.setDuration(2000);
         render.start();
 
-
-
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +74,6 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     private void RegisterUserClick() {

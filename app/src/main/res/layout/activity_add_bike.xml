@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:background="#222831"
     android:layout_height="match_parent"
-    tools:context=".AddBikeActivity">
+    tools:context=".AddBikeActivity"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +17,8 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        />
 
 
     <EditText
@@ -46,9 +48,6 @@
         android:inputType="text"
         />
 
-
-
-
     <EditText
         android:id="@+id/addBikeFrameNoEditText"
         android:layout_width="match_parent"
@@ -62,17 +61,6 @@
         android:inputType="text"
         />
 
-     <!--   <TextView
-        android:id="@+id/addBikeStelNummerError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FF6347"
-        android:textSize="15dp"
-        android:visibility="gone"
-        />-->
-
     <EditText
         android:id="@+id/addBikeKindOfBikeEditText"
         android:layout_width="match_parent"
@@ -84,19 +72,7 @@
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
-
         />
-
-   <!-- <TextView
-        android:id="@+id/addBikeTypeError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FF6347"
-        android:textSize="15dp"
-        android:visibility="gone"
-        />-->
 
     <EditText
         android:id="@+id/addBikeBrandEditText"
@@ -111,16 +87,6 @@
         android:inputType="textCapWords"
         />
 
- <!--   <TextView
-        android:id="@+id/addBikeMaerkeError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FF6347"
-        android:textSize="15dp"
-        android:visibility="gone"
-        />-->
 
     <EditText
         android:id="@+id/addBikeColorEditText"
@@ -135,16 +101,6 @@
         android:inputType="textCapWords"
         />
 
- <!--   <TextView
-        android:id="@+id/addBikeFarveError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FF6347"
-        android:textSize="15dp"
-        android:visibility="gone"
-        />-->
 
     <EditText
         android:id="@+id/addBikePlaceEditText"
@@ -157,18 +113,7 @@
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
-
         />
-  <!--  <TextView
-        android:id="@+id/addBikeStedError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FF6347"
-        android:textSize="15dp"
-        android:visibility="gone"
-        />-->
 
     <EditText
         android:id="@+id/addBikeDateEditText"
@@ -183,8 +128,6 @@
         android:clickable="false"
         android:visibility="gone"
         />
-
-
 
    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -225,6 +168,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        />
 
 </LinearLayout>

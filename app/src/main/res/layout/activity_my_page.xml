@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     android:background="#222831"
     android:orientation="vertical"
-    tools:context=".MyPageActivity">
+    tools:context=".MyPageActivity"
+    >
 
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
@@ -20,8 +22,8 @@
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:title="Min side"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-
+            android:layout_height="?attr/actionBarSize"
+            />
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
@@ -33,11 +35,13 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="391dp">
+        android:layout_height="391dp"
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/loggedInRecyclerView"
@@ -45,15 +49,16 @@
             android:layout_height="391dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp" />
-
+            android:layout_marginEnd="30dp"
+            />
 
         <ProgressBar
             android:id="@+id/myPageProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone" />
+            android:visibility="gone"
+            />
 
         <TextView
             android:id="@+id/myPageMessageTextView"
@@ -61,11 +66,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:textColor="#FFFFFF" />
-
+            android:textColor="#FFFFFF"
+            />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
     <TextView
         android:id="@+id/myPageInfoHeader"
@@ -76,7 +80,8 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        />
 
     <EditText
         android:id="@+id/myPageEditTextEmail"
@@ -86,8 +91,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:textColor="#FFFFFF"
-        android:textSize="18dp" />
-
+        android:textSize="18dp"
+        />
 
     <Button
         android:id="@+id/detailedBikeGoToBikesButton"
@@ -98,6 +103,7 @@
         android:layout_marginEnd="30dp"
         android:onClick="GoBackToBikesButtonClick"
         android:text="Oversigt over cykler"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        />
 
 </LinearLayout>

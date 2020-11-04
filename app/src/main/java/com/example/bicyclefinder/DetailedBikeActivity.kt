@@ -11,8 +11,6 @@ class DetailedBikeActivity : AppCompatActivity() {
         const val BIKE = "BIKE"
     }
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detailed_bike)
@@ -61,8 +59,6 @@ class DetailedBikeActivity : AppCompatActivity() {
     fun GoBackToListActivityClick(view: View?) {
         finish()
     }
-
-
 }
 
 

@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="#222831"
     android:orientation="vertical"
-    tools:context=".UserLoggedInActivity">
-
+    tools:context=".UserLoggedInActivity"
+    >
 
     <TextView
         android:id="@+id/loggedInHeader"
@@ -17,7 +17,8 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleGroup"
@@ -27,7 +28,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         app:singleSelection="true"
-        app:selectionRequired="true">
+        app:selectionRequired="true"
+        >
 
         <Button
             android:id="@+id/loggedInAllButton"
@@ -35,7 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:text="Alle" />
+            android:text="Alle"
+            />
 
         <Button
             android:id="@+id/loggedInMissingButton"
@@ -43,7 +46,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:text="Efterlyste" />
+            android:text="Efterlyste"
+            />
 
         <Button
             android:id="@+id/loggedInFoundButton"
@@ -51,13 +55,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:text="Fremlyste" />
-
-
+            android:text="Fremlyste"
+            />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -86,14 +87,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:orientation="vertical"
-            app:layout_dodgeInsetEdges="bottom">
+            app:layout_dodgeInsetEdges="bottom"
+            >
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/loggedinFloatingActionButtonMyPage"
@@ -103,7 +106,8 @@
             android:layout_marginEnd="16dp"
             android:layout_gravity="end|bottom"
             android:contentDescription="loggedinFl"
-            app:srcCompat="@drawable/baseline_person_black_18dp"/>
+            app:srcCompat="@drawable/baseline_person_black_18dp"
+            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/loggedinFloatingActionButton"
@@ -112,12 +116,9 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
             android:contentDescription="loggedinFl"
-            app:srcCompat="@drawable/baseline_add_black_18dp" />
+            app:srcCompat="@drawable/baseline_add_black_18dp"
+            />
+
         </LinearLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
-
 </LinearLayout>

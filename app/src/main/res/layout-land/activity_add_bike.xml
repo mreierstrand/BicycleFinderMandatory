@@ -6,12 +6,14 @@
     android:fillViewport="true"
     android:background="#222831"
     android:layout_height="match_parent"
-    tools:context=".AddBikeActivity">
+    tools:context=".AddBikeActivity"
+    >
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -20,8 +22,8 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"/>
-
+        android:textSize="30dp"
+        />
 
     <EditText
         android:id="@+id/addBikeNameOfPersonEditText"
@@ -84,8 +86,8 @@
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
-
         />
+
     <TextView
         android:id="@+id/addBikeTypeError"
         android:layout_width="match_parent"
@@ -156,8 +158,8 @@
         android:padding="15dp"
         android:textColor="#FFFFFF"
         android:inputType="textCapWords"
-
         />
+
     <TextView
         android:id="@+id/addBikeStedError"
         android:layout_width="match_parent"
@@ -183,14 +185,14 @@
         android:visibility="gone"
         />
 
-
-
-   <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+   <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/addBikeRadioGroup"
         >
+
         <RadioButton android:id="@+id/efterlystChosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -198,6 +200,7 @@
             android:text="Efterlyst"
             android:layout_marginStart="75dp"
             />
+
         <RadioButton android:id="@+id/fremlystChosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

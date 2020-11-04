@@ -159,7 +159,6 @@ public class LoginActivity extends AppCompatActivity {
         render.setDuration(2000);
     }
 
-
     public void LoginUserClickAUTO(View view) {
         EditText emailView = findViewById(R.id.mainEmailEditText);
         EditText passwordView = findViewById(R.id.mainPasswordEditText);

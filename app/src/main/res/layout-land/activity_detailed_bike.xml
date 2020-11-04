@@ -3,111 +3,99 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:fillViewport="true"
-    android:background="#222831"
     android:layout_height="match_parent"
-    tools:context=".DetailedBikeActivity">
+    android:background="#222831"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".DetailedBikeActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/detailedBikeHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Information om valgte cykel"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"/>
+        <TextView
+            android:id="@+id/detailedBikeHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Information om valgte cykel"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/detailedBikeFrameNoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/detailedBikeKindOfBikeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/detailedBikeBrandEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/detailedBikeColorEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/detailedBikePlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/detailedBikeDateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF" />
 
 
-    <EditText
-        android:id="@+id/detailedBikeFrameNoEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-
-        />
-
-    <EditText
-        android:id="@+id/detailedBikeKindOfBikeEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-        />
-
-    <EditText
-        android:id="@+id/detailedBikeBrandEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-
-        />
-
-    <EditText
-        android:id="@+id/detailedBikeColorEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-        />
-
-    <EditText
-        android:id="@+id/detailedBikePlaceEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-
-        />
-
-    <EditText
-        android:id="@+id/detailedBikeDateEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-
-        />
-
-
-    <EditText
-        android:id="@+id/detailedBikeMissingFoundEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:width="250dp"
-        android:padding="15dp"
-        android:textColor="#FFFFFF"
-
-        />
+        <EditText
+            android:id="@+id/detailedBikeMissingFoundEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:width="250dp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/detailedBikeNameEditText"
@@ -118,9 +106,7 @@
             android:width="250dp"
             android:padding="15dp"
             android:textColor="#FFFFFF"
-
             />
-
 
         <EditText
             android:id="@+id/detailedBikePhoneNoEditText"
@@ -131,21 +117,20 @@
             android:width="250dp"
             android:padding="15dp"
             android:textColor="#FFFFFF"
-
             />
 
-    <Button
-        android:id="@+id/detailedBikeBackButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="20dp"
-        android:textColor="#FFFFFF"
-        android:text="tilbage til oversigten"
-        android:onClick="GoBackToListActivityClick"
-        android:layout_marginBottom="25dp"
-        />
+        <Button
+            android:id="@+id/detailedBikeBackButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="25dp"
+            android:onClick="GoBackToListActivityClick"
+            android:text="tilbage til oversigten"
+            android:textColor="#FFFFFF"
+            />
+
     </LinearLayout>
-    
 </ScrollView>

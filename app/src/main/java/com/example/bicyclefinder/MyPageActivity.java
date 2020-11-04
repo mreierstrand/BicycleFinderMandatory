@@ -80,7 +80,6 @@ public class MyPageActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     private void getAndShowMyBikes() {
         String firebaseUserId = mAuth.getCurrentUser().getUid();
         BikeService bikeFinderService = ApiUtils.getBikeService();

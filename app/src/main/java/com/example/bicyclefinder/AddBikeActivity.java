@@ -50,7 +50,6 @@ public class AddBikeActivity extends AppCompatActivity {
     EditText addSted;
     EditText addDato;
 
-
     private FirebaseAuth mAuth;
 
     @Override
@@ -127,7 +126,6 @@ public class AddBikeActivity extends AppCompatActivity {
             addSted.setError(spannableStringBuilder);
         } else {
             Bike bikeToAdd = new Bike(stelnummer, type, maerke, farve, sted, "",1, getMissingFound(), firebaseUserId, name, phone);
-
 
         BikeService bikeService = ApiUtils.getBikeService();
         Call<Bike> AddBike = bikeService.postBike(bikeToAdd);
