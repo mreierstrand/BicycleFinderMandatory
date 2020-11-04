@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.logging.Handler;
 
+import render.animations.Attention;
 import render.animations.Bounce;
 import render.animations.Render;
 
@@ -40,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
-        messageView = findViewById(R.id.mainMessageTextView);
+        messageView = findViewById(R.id.registerMessageTextView);
         mAuth = FirebaseAuth.getInstance();
 
         emailText = findViewById(R.id.registerEmailEditText);
@@ -64,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RegisterUserClick();
+                RegisterUserClick(view);
             }
         });
 
@@ -76,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void RegisterUserClick() {
+    private void RegisterUserClick(View view) {
         progressBar.setVisibility(View.VISIBLE);
 
         String email, password;
@@ -84,18 +86,21 @@ public class RegisterActivity extends AppCompatActivity {
         password = passwordText.getText().toString().trim();
 
         if (TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
+            Error(view);
             Toast.makeText(getApplicationContext(), "Ingenting indtastet", Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.GONE);
             return;
         }
 
         if (TextUtils.isEmpty(email)) {
+            Error(view);
             Toast.makeText(getApplicationContext(), "Ingen email indtastet", Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.GONE);
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
+            Error(view);
             Toast.makeText(getApplicationContext(), "Intet password indtastet", Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.GONE);
             return;
@@ -129,16 +134,36 @@ public class RegisterActivity extends AppCompatActivity {
 
                         } else {
                             try {
+                                Error(view);
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
                                 //messageView.setText("Der er opstået et problem, prøv igen");
                                 Toast.makeText(getApplicationContext(), "Registrering mislykkedes. Prøv igen", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                                 AuthResult result = task.getResult();
+                                messageView.setTextColor(Color.WHITE);
                             } catch (RuntimeException ex) {
+                                messageView.setTextColor(Color.WHITE);
                                 messageView.setText(ex.getCause().getMessage());
                             }
                         }
                     }
                 });
+    }
+
+    public void Error(View view) {
+        EditText emailView = findViewById(R.id.registerEmailEditText);
+        EditText passwordView = findViewById(R.id.registerPasswordEditText);
+        Button registerButton = findViewById(R.id.registerCreateUserButton);
+        TextView registerTextView = findViewById(R.id.registerMessageTextView);
+
+        render.setDuration(2000);
+        render.setAnimation(Attention.Wobble(emailView));
+        render.start();
+        render.setAnimation(Attention.Wobble(passwordView));
+        render.start();
+        render.setAnimation(Attention.Wobble(registerButton));
+        render.start();
+        render.setAnimation(Attention.Wobble(registerTextView));
+        render.start();
     }
 }

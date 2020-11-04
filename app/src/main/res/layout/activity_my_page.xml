@@ -40,25 +40,22 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="391dp"
-        >
+        android:layout_height="457dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/loggedInRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="391dp"
+            android:layout_height="446dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            />
+            android:layout_marginEnd="30dp" />
 
         <ProgressBar
             android:id="@+id/myPageProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/myPageMessageTextView"
@@ -66,8 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -91,19 +87,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
-        />
+        android:textSize="18dp" />
 
-    <Button
-        android:id="@+id/detailedBikeGoToBikesButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="GoBackToBikesButtonClick"
-        android:text="Oversigt over cykler"
-        android:textColor="#FFFFFF"
-        />
 
 </LinearLayout>

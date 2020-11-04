@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -88,11 +89,9 @@ public class LoginActivity extends AppCompatActivity {
         passwordView.clearFocus();
     }
 
-
     public void mainRegisterButtonClick(View view) {
         startActivity(new Intent(getBaseContext(), RegisterActivity.class));
     }
-
 
     public void LoginUserClick(View view) {
         EditText emailView = findViewById(R.id.mainEmailEditText);

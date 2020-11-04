@@ -51,6 +51,7 @@ public class MyPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_page);
 
+
         topAppBar = findViewById(R.id.topAppBar);
         topAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +73,7 @@ public class MyPageActivity extends AppCompatActivity {
         messageView = findViewById(R.id.myPageMessageTextView);
 
         getAndShowMyBikes();
+
     }
 
     @Override
@@ -80,7 +82,7 @@ public class MyPageActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void getAndShowMyBikes() {
+    public void getAndShowMyBikes() {
         String firebaseUserId = mAuth.getCurrentUser().getUid();
         BikeService bikeFinderService = ApiUtils.getBikeService();
         Call<List<Bike>> getMyBikesCall = bikeFinderService.getBikesbyFirebaseId(firebaseUserId);
@@ -119,6 +121,7 @@ public class MyPageActivity extends AppCompatActivity {
         adapter.setOnItemClickListener((view, position, item) -> {
             Bike bike = (Bike) item;
             Log.d(LOG_TAG, item.toString());
+
             Intent intent = new Intent(this, MyPageDetailedBikeActivity.class);
             intent.putExtra(DetailedBikeActivity.BIKE, bike);
             Log.d(LOG_TAG, "putExtra " + bike.toString());
@@ -129,13 +132,6 @@ public class MyPageActivity extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-    }
-
-    public void GoBackToBikesButtonClick(View view) {
-        FirebaseUser user = mAuth.getCurrentUser();
-        Intent intent = new Intent(MyPageActivity.this, UserLoggedInActivity.class);
-        intent.putExtra("userLoggedInMail", user.getEmail());
-        startActivity(intent);
     }
 
     public void MenulogoutClicked(MenuItem item) {

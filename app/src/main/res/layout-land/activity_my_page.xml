@@ -10,8 +10,6 @@
     >
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#34495e"
@@ -49,25 +47,22 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        >
+        android:layout_height="200dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/loggedInRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="375dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/loggedInRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp" />
 
         <ProgressBar
             android:id="@+id/myPageProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -78,14 +73,14 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:textColor="#FFFFFF"
-        />
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/myPageInfoHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Min information"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
@@ -101,17 +96,6 @@
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
         android:textSize="18dp"
-        />
-
-    <Button
-        android:id="@+id/detailedBikeGoToBikesButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#FFFFFF"
-        android:text="Oversigt over cykler"
-        android:onClick="GoBackToBikesButtonClick"
         />
 
 </LinearLayout>

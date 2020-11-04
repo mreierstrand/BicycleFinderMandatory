@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:fillViewport="true"
-    android:background="#222831"
     android:layout_height="match_parent"
     >
 
@@ -15,7 +14,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#34495e"
+    android:background="#222831"
     android:layout_height="match_parent"
     tools:context=".MyPageDetailedBikeActivity"
     >
