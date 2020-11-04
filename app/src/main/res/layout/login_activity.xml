@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#34495e"
+    android:background="#222831"
     android:orientation="vertical"
     tools:context=".LoginActivity"
     tools:ignore="MissingDefaultResource">
@@ -13,12 +13,13 @@
       android:id="@+id/mainHeader"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Bicycle finder"
+      android:text="Bicycle Finder"
       android:layout_marginTop="25dp"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
       android:textColor="#FFFFFF"
-      android:textSize="40dp"/>
+      android:textSize="40dp"
+      android:fontFamily="sans-serif-thin"/>
 
   <TextView
       android:id="@+id/mainSubHeader"
@@ -94,7 +95,7 @@
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Ny bruger"
+      android:text="Ny bruger?"
       android:layout_marginTop="100dp"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -108,7 +109,7 @@
       android:layout_marginStart="30dp"
       android:layout_marginEnd="30dp"
       android:layout_marginTop="10dp"
-      android:text="Registrér dig her"
+      android:text="Registrér dig her!"
       android:onClick="mainRegisterButtonClick" />
 
 
