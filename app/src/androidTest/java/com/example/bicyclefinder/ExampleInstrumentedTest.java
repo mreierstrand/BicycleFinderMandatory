@@ -45,8 +45,8 @@ public class ExampleInstrumentedTest {
         //Context of the app under test.
         //Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         //assertEquals("com.example.bicyclefinder", appContext.getPackageName());
-        
-          onView(withId(R.id.mainHeader)).check(matches(withText("Bicycle finder")));
+
+          onView(withId(R.id.mainHeader)).check(matches(withText("Bicycle Finder")));
           onView(withId(R.id.mainEmailEditText)).perform(typeText("test@test.com"));
           onView(withId(R.id.mainPasswordEditText)).perform(typeText("testtest"));
           onView(withId(R.id.mainLoginButton)).perform(click());
