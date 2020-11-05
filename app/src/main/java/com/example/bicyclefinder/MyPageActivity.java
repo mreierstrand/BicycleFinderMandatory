@@ -134,6 +134,11 @@ public class MyPageActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    public void onStart() {
+        super.onStart();
+        getAndShowMyBikes();
+    }
+
     public void MenulogoutClicked(MenuItem item) {
         mAuth.signOut();
         Intent intent = new Intent(MyPageActivity.this, LoginActivity.class);

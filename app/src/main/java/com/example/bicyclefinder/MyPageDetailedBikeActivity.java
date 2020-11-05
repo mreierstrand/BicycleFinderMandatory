@@ -113,16 +113,8 @@ public class MyPageDetailedBikeActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     messageView.setText("Cykel er slettet");
                     Toast.makeText(getBaseContext(), "Cykel slettet!", Toast.LENGTH_SHORT).show();
-
-                    //Email bliver null
-                    //Intent intent = new Intent(getBaseContext(), MyPageActivity.class);
-                    //FirebaseUser user = mAuth.getCurrentUser();
-                    //intent.putExtra("userLoggedIn", user.getEmail());
-                    //startActivity(intent);
-
-                    //Listen over cykler bliver ikke opdateret når finish() bliver kaldt
                     finish();
-
+                    
                     Log.d(LOG_TAG, "Cykel med stelnummer: " + wantedBike.getFrameNumber() + " er slettet");
                 } else {
                     Log.d(LOG_TAG, "Der er sket en fejl :-(");
